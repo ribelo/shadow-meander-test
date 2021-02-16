@@ -1,0 +1,31 @@
+both when trying to run the code from repl enabled via emacs and when trying to
+compile it, a strange waring pops up
+
+#+begin_src
+------ WARNING #1 - :undeclared-var --------------------------------------------
+ File: /home/ribelo/code/shadow-meander-test/src/shadow_meander_test/core.cljs:7:4
+--------------------------------------------------------------------------------
+   4 |
+   5 | (defn main [& _]
+   6 |   (println
+   7 |    (m/rewrite [1 2 3]
+----------^---------------------------------------------------------------------
+ Use of undeclared Var shadow-meander-test.core/java
+--------------------------------------------------------------------------------
+   8 |      [!ks ...]
+   9 |      [(m/cata !ks) ...]
+  10 |      ?x ~(inc ?x))))
+  11 |
+--------------------------------------------------------------------------------
+#+end_src
+
+the code still compiles and can be run without any problems
+
+#+begin_src
+ribelo@ribelo-xps ~/c/shadow-meander-test (master)> node ./out/node-test.js
+[2 3 4]
+#+end_src
+
+but already trying to execute the code from the repl level returns nil
+
+[[file:2021-02-17-003140_grim.png]]
