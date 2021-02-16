@@ -1,0 +1,6 @@
+{:deps true
+ :builds
+ {:node-test
+  {:target :node-script
+   :main shadow-meander-test.core/main
+   :output-to "out/node-test.js"}}}
